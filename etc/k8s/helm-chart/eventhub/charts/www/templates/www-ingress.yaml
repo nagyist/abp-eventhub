@@ -10,7 +10,7 @@ metadata:
 {{- if eq .Release.Name "eh-az" }}
     nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 {{- end }}
-    cert-manager.io/cluster-issuer: letsencrypt
+    #cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: nginx
   tls:
