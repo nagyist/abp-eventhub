@@ -13,7 +13,7 @@ spec:
   tls:
   - hosts:
       - {{ .Values.global.apiDomain }}
-    secretName: {{ .Release.Name }}-{{ .Chart.Name }}-tls
+    secretName: oeh-origin-tls
   rules:
   - host: "{{ .Values.global.apiDomain }}"
     http:

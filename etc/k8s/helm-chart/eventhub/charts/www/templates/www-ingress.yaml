@@ -19,7 +19,7 @@ spec:
 {{- if eq .Release.Name "eh-az" }}
       - {{ print "www." .Values.global.wwwDomain }}
 {{- end }}
-    secretName: {{ .Release.Name }}-{{ .Chart.Name }}-tls
+    secretName: oeh-origin-tls
   rules:
 {{- if eq .Release.Name "eh-az" }}
   - host: "{{ print "www." .Values.global.wwwDomain }}"

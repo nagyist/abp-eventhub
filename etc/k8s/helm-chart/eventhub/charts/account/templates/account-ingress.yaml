@@ -15,7 +15,7 @@ spec:
   tls:
   - hosts:
       - {{ .Values.global.accountDomain }}
-    secretName: {{ .Release.Name }}-{{ .Chart.Name }}-tls
+    secretName: oeh-origin-tls
   rules:
   - host: "{{ .Values.global.accountDomain }}"
     http:
