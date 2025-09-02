@@ -34,5 +34,7 @@ dbmigrator:
   containerImage: "volosoft.azurecr.io/eventhub/dbmigrator"
 background-services:
   containerImage: "volosoft.azurecr.io/eventhub/background"
+payPal:
+  secretName: paypal-secret  # look for this secret https://github.com/volosoft/devops/blob/master/old-folder/eventhub/apihost-secret.yaml
 nodeSelector:
     agentpool: demopool
