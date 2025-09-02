@@ -22,5 +22,15 @@ spec:
           containerPort: 443
         env:
 {{ include "eventhub.global.env" . | indent 8 }}
+        - name: Payment__PayPal__ClientId
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.payPal.secretName }}
+              key: clientId
+        - name: Payment__PayPal__Secret
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.payPal.secretName }}
+              key: secret
       nodeSelector:
         agentpool: demopool
