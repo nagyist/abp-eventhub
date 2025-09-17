@@ -59,6 +59,14 @@
     "@abp/core" "~9.3.4"
     bootstrap "^5.3.3"
 
+"@abp/cms-kit.public@~9.3.4":
+  version "9.3.4"
+  resolved "https://registry.yarnpkg.com/@abp/cms-kit.public/-/cms-kit.public-9.3.4.tgz#becd73e870d8aea36bb473e6bfd296b330179225"
+  integrity sha512-LT2U4bTCiTurtbs3TByhlAc14z34puapGph03QPu7973cp8g8ls+Yrp/bT05aDDrGE3fnBVW5Axd/cy1/5BPWQ==
+  dependencies:
+    "@abp/highlight.js" "~9.3.4"
+    "@abp/star-rating-svg" "~9.3.4"
+
 "@abp/core@~9.3.4":
   version "9.3.4"
   resolved "https://registry.yarnpkg.com/@abp/core/-/core-9.3.4.tgz#dde73cf21c929400e14a296c34633cf8b327162f"
@@ -89,6 +97,14 @@
   dependencies:
     "@abp/core" "~9.3.4"
     "@fortawesome/fontawesome-free" "^6.6.0"
+
+"@abp/highlight.js@~9.3.4":
+  version "9.3.4"
+  resolved "https://registry.yarnpkg.com/@abp/highlight.js/-/highlight.js-9.3.4.tgz#62a98df3441d6586da0c51e60409cb928115dbb8"
+  integrity sha512-CapJClX9aT1qjNMdCXS//2YFL1fV2jv8jpqmxdIK2D5aqNv2m8+qArCSlkdfUGnkptGrzJhPizgn39bqYpXDyA==
+  dependencies:
+    "@abp/core" "~9.3.4"
+    "@highlightjs/cdn-assets" "~11.10.0"
 
 "@abp/jquery-form@~9.3.4":
   version "9.3.4"
@@ -161,6 +177,14 @@
     "@abp/core" "~9.3.4"
     select2 "^4.0.13"
 
+"@abp/star-rating-svg@~9.3.4":
+  version "9.3.4"
+  resolved "https://registry.yarnpkg.com/@abp/star-rating-svg/-/star-rating-svg-9.3.4.tgz#baba7f2bdb9d32d840868887f01573b73c1b30c8"
+  integrity sha512-SgaUAEYeIdSvKiXM3Q8ub2mws50ZU4Wa1Ez3RZY1UkHkMiAEThbkL2dWhMvxCvQoeuXK8cLbUv2PWFMrLaE3lA==
+  dependencies:
+    "@abp/jquery" "~9.3.4"
+    star-rating-svg "^3.5.0"
+
 "@abp/sweetalert2@~9.3.4":
   version "9.3.4"
   resolved "https://registry.yarnpkg.com/@abp/sweetalert2/-/sweetalert2-9.3.4.tgz#c96cef8b7e6607f34a05cd998d70dd871fe9eef9"
@@ -193,6 +217,11 @@
   version "6.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-6.7.2.tgz#8249de9b7e22fcb3ceb5e66090c30a1d5492b81a"
   integrity sha512-JUOtgFW6k9u4Y+xeIaEiLr3+cjoUPiAuLXoyKOJSia6Duzb7pq+A76P9ZdPDoAoxHdHzq6gE9/jKBGXlZT8FbA==
+
+"@highlightjs/cdn-assets@~11.10.0":
+  version "11.10.0"
+  resolved "https://registry.yarnpkg.com/@highlightjs/cdn-assets/-/cdn-assets-11.10.0.tgz#cbf79698d83eea89e5cde01fee40f1b7df46ad7f"
+  integrity sha512-vWXpu+Rdm0YMJmugFdUiL/9DmgYjEiV+d5DBqlXdApnGPSIeo6+LRS5Hpx6fvVsKkvR4RsLYD9rQ6DOLkj7OKA==
 
 ansi-colors@^4.1.3:
   version "4.1.3"
@@ -317,6 +346,11 @@ select2@^4.0.13:
   version "4.0.13"
   resolved "https://registry.yarnpkg.com/select2/-/select2-4.0.13.tgz#0dbe377df3f96167c4c1626033e924372d8ef44d"
   integrity sha512-1JeB87s6oN/TDxQQYCvS5EFoQyvV6eYMZZ0AeA4tdFDYWN3BAGZ8npr17UBFddU0lgAt3H0yjX3X6/ekOj1yjw==
+
+star-rating-svg@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/star-rating-svg/-/star-rating-svg-3.5.0.tgz#72b147015a433da63153fb607af6d51c7c1ea364"
+  integrity sha512-ItfRzGQxDuf4IMR9VV7nfbbcfZ2pAkQ2xfiq/kLzeGUxnyZXttbJrI1erRM2CZedQ+Qu6+yS4u+hUGybkDGYEA==
 
 sweetalert2@^11.14.1:
   version "11.23.0"
