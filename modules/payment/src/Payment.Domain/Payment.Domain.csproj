@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="9.0.0" />
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="9.3.3" />
     <ProjectReference Include="..\Payment.Domain.Shared\Payment.Domain.Shared.csproj" />
     <PackageReference Update="Fody" Version="6.8.2">
       <PrivateAssets>all</PrivateAssets>
