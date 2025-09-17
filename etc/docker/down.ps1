@@ -1,1 +1,1 @@
-docker-compose -f infrastructure/posgres.yml -f infrastructure/redis.yml down
+docker-compose -f infrastructure/postgres.yml -f infrastructure/redis.yml down
