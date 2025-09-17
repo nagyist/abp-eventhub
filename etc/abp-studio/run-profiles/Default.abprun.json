@@ -42,5 +42,12 @@
       "Admin": {},
       "Public": {}
     }
+  },
+  "containers": {
+    "files": {
+      "../../docker/infrastructure/redis.yml": {},
+      "../../docker/infrastructure/postgres.yml": {}
+    },
+    "serviceName": "EventHub"
   }
 }

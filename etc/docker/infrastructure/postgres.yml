@@ -1,19 +1,18 @@
 version: '3.7'
 
+networks:
+  eventhub-network:
+    external: true
+
 services:
-  redis:
-    image: redis:6.0.10-alpine
-    networks:
-      - eventhub-network      
   postgresql:
+    container_name: postgres
     image: postgres
     restart: always
+    ports: 
+      - "5432:5432"
     environment: 
       POSTGRES_USER: "root"
       POSTGRES_PASSWORD: "root"
     networks: 
       - eventhub-network
-
-networks:
-  eventhub-network:
-    external: true
