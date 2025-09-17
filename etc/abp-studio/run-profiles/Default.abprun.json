@@ -6,7 +6,8 @@
       "launchUrl": "https://localhost:44362",
       "kubernetesService": null,
       "healthCheckEndpoint": "/",
-      "healthUiEndpoint": null
+      "healthUiEndpoint": null,
+      "folder": "Public"
     },
     "EventHub.Admin.Web": {
       "type": "dotnet-project",
@@ -14,7 +15,8 @@
       "launchUrl": "https://localhost:44307",
       "kubernetesService": null,
       "healthCheckEndpoint": "/",
-      "healthUiEndpoint": null
+      "healthUiEndpoint": null,
+      "folder": "Admin"
     },
     "EventHub.Web": {
       "type": "dotnet-project",
@@ -22,7 +24,8 @@
       "launchUrl": "https://localhost:44308",
       "kubernetesService": null,
       "healthCheckEndpoint": "/",
-      "healthUiEndpoint": null
+      "healthUiEndpoint": null,
+      "folder": "Public"
     },
     "EventHub.Admin.HttpApi.Host": {
       "type": "dotnet-project",
@@ -30,7 +33,14 @@
       "launchUrl": "https://localhost:44305",
       "kubernetesService": null,
       "healthCheckEndpoint": "/",
-      "healthUiEndpoint": null
+      "healthUiEndpoint": null,
+      "folder": "Admin"
+    }
+  },
+  "folders": {
+    "items": {
+      "Admin": {},
+      "Public": {}
     }
   }
 }
