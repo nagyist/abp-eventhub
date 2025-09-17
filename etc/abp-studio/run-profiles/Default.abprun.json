@@ -35,6 +35,14 @@
       "healthCheckEndpoint": "/",
       "healthUiEndpoint": null,
       "folder": "Admin"
+    },
+    "EventHub.IdentityServer": {
+      "type": "dotnet-project",
+      "path": "../../../src/EventHub.IdentityServer/EventHub.IdentityServer.csproj",
+      "launchUrl": "https://localhost:44313",
+      "kubernetesService": null,
+      "healthCheckEndpoint": "/",
+      "healthUiEndpoint": null
     }
   },
   "folders": {
