@@ -33,6 +33,7 @@ using Volo.Abp.Caching.StackExchangeRedis;
 using Volo.Abp.IdentityServer;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
+using Volo.Abp.Studio.Client.AspNetCore;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
 
@@ -47,6 +48,7 @@ namespace EventHub
         typeof(EventHubWebThemeModule),
         typeof(EventHubEntityFrameworkCoreModule),
         typeof(AbpAspNetCoreSerilogModule),
+        typeof(AbpStudioClientAspNetCoreModule),
         typeof(EventHubWebSharedModule)
         )]
     public class EventHubIdentityServerModule : AbpModule
@@ -214,6 +216,7 @@ namespace EventHub
                 app.UseErrorPage();
             }
 
+            app.UseAbpStudioLink();
             app.UseCookiePolicy();
             app.UseCorrelationId();
             app.MapAbpStaticAssets();

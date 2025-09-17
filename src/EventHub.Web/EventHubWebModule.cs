@@ -33,6 +33,7 @@ using Volo.Abp.Caching.StackExchangeRedis;
 using Volo.Abp.Http.Client;
 using Volo.Abp.Http.Client.IdentityModel.Web;
 using Volo.Abp.Modularity;
+using Volo.Abp.Studio.Client.AspNetCore;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.UI.Navigation.Urls;
@@ -55,6 +56,7 @@ namespace EventHub.Web
         typeof(AbpSwashbuckleModule),
         typeof(AbpAccountApplicationContractsModule),
         typeof(CmsKitPublicWebModule),
+        typeof(AbpStudioClientAspNetCoreModule),
         typeof(PaymentWebModule)
         )]
     public class EventHubWebModule : AbpModule
@@ -257,6 +259,7 @@ namespace EventHub.Web
                 app.UseErrorPage();
             }
 
+            app.UseAbpStudioLink();
             app.UseCookiePolicy();
             app.UseCorrelationId();
             app.MapAbpStaticAssets();

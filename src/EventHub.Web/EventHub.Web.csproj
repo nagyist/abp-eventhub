@@ -39,6 +39,10 @@
     <PackageReference Include="Volo.CmsKit.Public.Web" Version="9.3.3" />
   </ItemGroup>
 
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Studio.Client.AspNetCore" Version="1.2.2" />
+    </ItemGroup>
+
   <ItemGroup>
     <Compile Remove="Logs\**" />
     <Content Remove="Logs\**" />

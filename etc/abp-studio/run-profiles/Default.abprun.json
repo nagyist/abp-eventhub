@@ -56,6 +56,6 @@
       "../../docker/infrastructure/redis.yml": {},
       "../../docker/infrastructure/postgres.yml": {}
     },
-    "serviceName": "EventHub"
+    "serviceName": "eventhub"
   }
 }
