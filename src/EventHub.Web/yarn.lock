@@ -201,14 +201,6 @@
     "@abp/jquery" "~9.3.4"
     timeago "^1.6.7"
 
-"@abp/toastr@~9.3.4":
-  version "9.3.4"
-  resolved "https://registry.yarnpkg.com/@abp/toastr/-/toastr-9.3.4.tgz#d8380c488ababa7475a2c4c80dcc6346bb26b601"
-  integrity sha512-uRSgZTv6agKCUbfCbLRGe6/PgmM3O2yO7aEbnlCR7DHuiKmeDI/MEwi3wJiYAaohClH4oHnOn8n63hJVEek87w==
-  dependencies:
-    "@abp/jquery" "~9.3.4"
-    toastr "^2.1.4"
-
 "@abp/utils@~9.3.4":
   version "9.3.4"
   resolved "https://registry.yarnpkg.com/@abp/utils/-/utils-9.3.4.tgz#72d0c8b109415d584c887fd8c904644cdf767fd4"
@@ -311,7 +303,7 @@ jquery-validation@>=1.19, jquery-validation@^1.21.0:
   resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.21.0.tgz#78fc05ab76020912a246af3661b3f54a438bca93"
   integrity sha512-xNot0rlUIgu7duMcQ5qb6MGkGL/Z1PQaRJQoZAURW9+a/2PGOUxY36o/WyNeP2T9R6jvWB8Z9lUVvvQWI/Zs5w==
 
-jquery@>=1.10, jquery@>=1.12.0, jquery@>=1.2.6, "jquery@>=1.5.0 <4.0", jquery@>=1.7, jquery@>=1.7.2, jquery@>=1.8.3, "jquery@>=3.4.0 <4.0.0", jquery@^3.6.0, jquery@~3.7.1:
+jquery@>=1.10, jquery@>=1.2.6, "jquery@>=1.5.0 <4.0", jquery@>=1.7, jquery@>=1.7.2, jquery@>=1.8.3, "jquery@>=3.4.0 <4.0.0", jquery@^3.6.0, jquery@~3.7.1:
   version "3.7.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.1.tgz#083ef98927c9a6a74d05a6af02806566d16274de"
   integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
@@ -371,10 +363,3 @@ timeago@^1.6.7:
   integrity sha512-FikcjN98+ij0siKH4VO4dZ358PR3oDDq4Vdl1+sN9gWz1/+JXGr3uZbUShYH/hL7bMhcTpPbplJU5Tej4b4jbQ==
   dependencies:
     jquery ">=1.5.0 <4.0"
-
-toastr@^2.1.4:
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.4.tgz#8b43be64fb9d0c414871446f2db8e8ca4e95f181"
-  integrity sha512-LIy77F5n+sz4tefMmFOntcJ6HL0Fv3k1TDnNmFZ0bU/GcvIIfy6eG2v7zQmMiYgaalAiUv75ttFrPn5s0gyqlA==
-  dependencies:
-    jquery ">=1.12.0"
