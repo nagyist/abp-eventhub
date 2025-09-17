@@ -1,0 +1,106 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "EventHub.Domain": {
+      "path": "src/EventHub.Domain/EventHub.Domain.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Application": {
+      "path": "src/EventHub.Application/EventHub.Application.abppkg",
+      "folder": "src"
+    },
+    "EventHub.EntityFrameworkCore": {
+      "path": "src/EventHub.EntityFrameworkCore/EventHub.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Application.Tests": {
+      "path": "test/EventHub.Application.Tests/EventHub.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "EventHub.Domain.Shared": {
+      "path": "src/EventHub.Domain.Shared/EventHub.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Application.Contracts": {
+      "path": "src/EventHub.Application.Contracts/EventHub.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "EventHub.HttpApi": {
+      "path": "src/EventHub.HttpApi/EventHub.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "EventHub.HttpApi.Client": {
+      "path": "src/EventHub.HttpApi.Client/EventHub.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "EventHub.IdentityServer": {
+      "path": "src/EventHub.IdentityServer/EventHub.IdentityServer.abppkg",
+      "folder": "src"
+    },
+    "EventHub.HttpApi.Host": {
+      "path": "src/EventHub.HttpApi.Host/EventHub.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "EventHub.EntityFrameworkCore.Tests": {
+      "path": "test/EventHub.EntityFrameworkCore.Tests/EventHub.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "EventHub.TestBase": {
+      "path": "test/EventHub.TestBase/EventHub.TestBase.abppkg",
+      "folder": "test"
+    },
+    "EventHub.Domain.Tests": {
+      "path": "test/EventHub.Domain.Tests/EventHub.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "EventHub.DbMigrator": {
+      "path": "src/EventHub.DbMigrator/EventHub.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Admin.Web": {
+      "path": "src/EventHub.Admin.Web/EventHub.Admin.Web.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Web": {
+      "path": "src/EventHub.Web/EventHub.Web.abppkg",
+      "folder": "src"
+    },
+    "EventHub.BackgroundServices": {
+      "path": "src/EventHub.BackgroundServices/EventHub.BackgroundServices.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Admin.Application.Contracts": {
+      "path": "src/EventHub.Admin.Application.Contracts/EventHub.Admin.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Admin.Application": {
+      "path": "src/EventHub.Admin.Application/EventHub.Admin.Application.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Admin.HttpApi": {
+      "path": "src/EventHub.Admin.HttpApi/EventHub.Admin.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Admin.HttpApi.Client": {
+      "path": "src/EventHub.Admin.HttpApi.Client/EventHub.Admin.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Web.Theme": {
+      "path": "src/EventHub.Web.Theme/EventHub.Web.Theme.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Admin.HttpApi.Host": {
+      "path": "src/EventHub.Admin.HttpApi.Host/EventHub.Admin.HttpApi.Host.abppkg",
+      "folder": "src"
+    },
+    "EventHub.Web.Shared": {
+      "path": "src/EventHub.Web.Shared/EventHub.Web.Shared.abppkg",
+      "folder": "src"
+    }
+  }
+}

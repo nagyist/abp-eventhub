@@ -364,3 +364,7 @@ src/EventHub.HttpApi.HostWithIds/Logs/*
 src/EventHub.DbMigrator/Logs/*
 .tye/
 tempkey.jwk
+
+
+# ABP Studio
+**/.abpstudio/

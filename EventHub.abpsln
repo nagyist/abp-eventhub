@@ -1,0 +1,25 @@
+{
+  "id": "e6e1a31e-e8e5-4e30-becb-d6e669bcb731",
+  "template": "empty",
+  "modules": {
+    "EventHub": {
+      "path": "EventHub.abpmdl",
+      "folder": "Main"
+    },
+    "Payment": {
+      "path": "modules/payment/Payment.abpmdl",
+      "folder": "Modules"
+    }
+  },
+  "runProfiles": {
+    "Default": {
+      "path": "etc/abp-studio/run-profiles/Default.abprun.json"
+    }
+  },
+  "folders": {
+    "items": {
+      "Modules": {},
+      "Main": {}
+    }
+  }
+}
