@@ -1,8 +1,11 @@
 (function () {
     abp.widgets.CreateOrEditEventArea = function ($wrapper) {
         var l = abp.localization.getResource('EventHub');
-        toastr.options.timeOut = 500;
-        toastr.options.preventDuplicates = true;
+
+        AbpToastService.setDefaultOptions({
+            life: 5000,
+            closable: true
+        });
         
         var stepType = {
             "Event": "Event",
@@ -74,16 +77,18 @@
                         if (eventIdInput.val().length === 36) {
                             abp.notify.success('Updated event');
                         }else{
-                            abp.notify.success('Created event as a draft' , '', toastr.options.timeOut = 2500);
+                            abp.notify.success('Created event as a draft' , '', {
+                                life: 2500
+                            });
                             eventIdInput.val(response.id);
                             eventUrlCodeInput.val(response.urlCode);
                         }
                         SwitchToTrackCreation()
                     },
                     error: function (errorRaw) {
-                        abp.notify.error(errorRaw.responseJSON.error.message, 'Error', 
-                            toastr.options = {
-                                timeOut: 2500,
+                        abp.notify.error(errorRaw.responseJSON.error.message, 'Error',
+                            {
+                                life: 2500,
                                 progressBar: true,
                                 positionClass: "toast-bottom-right"
                             }
@@ -385,8 +390,8 @@
             abp.notify.error(
                 error.message,
                 'Error',
-                toastr.options = {
-                    timeOut: 2500,
+                {
+                    life: 2500,
                     progressBar: true,
                     positionClass: "toast-bottom-right"
                 }
