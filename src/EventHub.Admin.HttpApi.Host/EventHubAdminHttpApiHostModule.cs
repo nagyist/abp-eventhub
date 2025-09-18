@@ -31,6 +31,7 @@ using Volo.Abp.Caching.StackExchangeRedis;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.Security.Claims;
+using Volo.Abp.Studio.Client.AspNetCore;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.Timing;
 using Volo.Abp.VirtualFileSystem;
@@ -46,6 +47,7 @@ namespace EventHub.Admin
         typeof(AbpAspNetCoreSerilogModule),
         typeof(AbpSwashbuckleModule),
         typeof(AbpAspNetCoreMvcUiBasicThemeModule),
+        typeof(AbpStudioClientAspNetCoreModule),
         typeof(EventHubWebSharedModule)
     )]
     public class EventHubAdminHttpApiHostModule : AbpModule
@@ -233,6 +235,7 @@ namespace EventHub.Admin
                 app.UseErrorPage();
             }
 
+            app.UseAbpStudioLink();
             app.UseCookiePolicy();
             app.UseCorrelationId();
             app.MapAbpStaticAssets();

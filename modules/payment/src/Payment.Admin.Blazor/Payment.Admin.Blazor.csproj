@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="9.0.0" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Components.WebAssembly.Theming" Version="9.3.4" />
         <ProjectReference Include="..\Payment.Admin.HttpApi.Client\Payment.Admin.HttpApi.Client.csproj" />
         <PackageReference Update="Fody" Version="6.8.2">
           <PrivateAssets>all</PrivateAssets>

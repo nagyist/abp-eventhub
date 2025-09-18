@@ -1,0 +1,14 @@
+version: '3.7'
+
+networks:
+  eventhub-network:
+    external: true
+
+services:
+  redis:
+    container_name: redis
+    image: redis:6.0.10-alpine
+    ports:
+      - "6379:6379"
+    networks:
+      - eventhub-network

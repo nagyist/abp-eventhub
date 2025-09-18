@@ -257,3 +257,6 @@ host/Payment.HttpApi.Host/Logs/logs.txt
 host/Payment.Web.Host/Logs/logs.txt
 host/Payment.Web.Unified/Logs/logs.txt
 host/Payment.Blazor.Server.Host/Logs/logs.txt
+
+# ABP Studio
+**/.abpstudio/

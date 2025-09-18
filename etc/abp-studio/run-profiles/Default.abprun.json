@@ -1,0 +1,61 @@
+{
+  "applications": {
+    "EventHub.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../../src/EventHub.HttpApi.Host/EventHub.HttpApi.Host.csproj",
+      "launchUrl": "https://localhost:44362",
+      "kubernetesService": null,
+      "healthCheckEndpoint": "/",
+      "healthUiEndpoint": null,
+      "folder": "Public"
+    },
+    "EventHub.Admin.Web": {
+      "type": "dotnet-project",
+      "path": "../../../src/EventHub.Admin.Web/EventHub.Admin.Web.csproj",
+      "launchUrl": "https://localhost:44307",
+      "kubernetesService": null,
+      "healthCheckEndpoint": "/",
+      "healthUiEndpoint": null,
+      "folder": "Admin"
+    },
+    "EventHub.Web": {
+      "type": "dotnet-project",
+      "path": "../../../src/EventHub.Web/EventHub.Web.csproj",
+      "launchUrl": "https://localhost:44308",
+      "kubernetesService": null,
+      "healthCheckEndpoint": "/",
+      "healthUiEndpoint": null,
+      "folder": "Public"
+    },
+    "EventHub.Admin.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../../src/EventHub.Admin.HttpApi.Host/EventHub.Admin.HttpApi.Host.csproj",
+      "launchUrl": "https://localhost:44305",
+      "kubernetesService": null,
+      "healthCheckEndpoint": "/",
+      "healthUiEndpoint": null,
+      "folder": "Admin"
+    },
+    "EventHub.IdentityServer": {
+      "type": "dotnet-project",
+      "path": "../../../src/EventHub.IdentityServer/EventHub.IdentityServer.csproj",
+      "launchUrl": "https://localhost:44313",
+      "kubernetesService": null,
+      "healthCheckEndpoint": "/",
+      "healthUiEndpoint": null
+    }
+  },
+  "folders": {
+    "items": {
+      "Admin": {},
+      "Public": {}
+    }
+  },
+  "containers": {
+    "files": {
+      "../../docker/infrastructure/redis.yml": {},
+      "../../docker/infrastructure/postgres.yml": {}
+    },
+    "serviceName": "eventhub"
+  }
+}
