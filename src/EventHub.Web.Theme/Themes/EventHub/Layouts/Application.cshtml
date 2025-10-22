@@ -34,6 +34,9 @@
     }
 
     var rtl = CultureHelper.IsRtl ? "rtl" : string.Empty;
+
+    var eventHubTitle = "EventHub | Discover, Create & Manage Events Worldwide";
+    var eventHubDescription = "Join a global community of millions on EventHub — browse upcoming events, connect with organizations, or launch your own event in minutes. Explore, share and grow your network today!";
 }
 
 <!DOCTYPE html>
@@ -47,16 +50,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>@pageTitle</title>
-    <meta name="description" content="@(!string.IsNullOrEmpty(ViewBag.Description) ? ViewBag.Description : "EventHub Description")"/>
-    <meta property="og:title" content="@(!string.IsNullOrWhiteSpace(ViewBag.OgTitle) ? ViewBag.OgTitle : "EventHub Title")"/>
+    <meta name="description" content="@(!string.IsNullOrEmpty(ViewBag.Description) ? ViewBag.Description : eventHubDescription)"/>
+    <meta property="og:title" content="@(!string.IsNullOrWhiteSpace(ViewBag.OgTitle) ? ViewBag.OgTitle : eventHubTitle)"/>
     <meta property="og:url" content="@Context.Request.GetDisplayUrl()"/>
     <meta property="og:type" content="@(!string.IsNullOrWhiteSpace(ViewBag.OgType) ? ViewBag.OgType : "website")"/>
-    <meta property="og:description" content="@(!string.IsNullOrWhiteSpace(ViewBag.OgDescription) ? ViewBag.OgDescription : "EventHub Description")"/>
+    <meta property="og:description" content="@(!string.IsNullOrWhiteSpace(ViewBag.OgDescription) ? ViewBag.OgDescription : eventHubDescription)"/>
     <meta property="og:image" content="@(!string.IsNullOrWhiteSpace(ViewBag.OgImage) ? ViewBag.OgImage : UrlOptions.Value.Www + "/assets/slide.jpg")"/>
     <meta property="twitter:card" content="summary_large_image"/>
     <meta property="twitter:site" content="@Html.Raw("@openeventhub")"/>
-    <meta property="twitter:title" content="@(!string.IsNullOrWhiteSpace(ViewBag.TwitterTitle) ? ViewBag.TwitterTitle : "EventHub")"/>
-    <meta property="twitter:description" content="@(!string.IsNullOrWhiteSpace(ViewBag.TwitterDescription) ? ViewBag.TwitterDescription : "EventHub Description")"/>
+    <meta property="twitter:title" content="@(!string.IsNullOrWhiteSpace(ViewBag.TwitterTitle) ? ViewBag.TwitterTitle : eventHubTitle)"/>
+    <meta property="twitter:description" content="@(!string.IsNullOrWhiteSpace(ViewBag.TwitterDescription) ? ViewBag.TwitterDescription : eventHubDescription)"/>
     <meta property="twitter:image" content="@(!string.IsNullOrWhiteSpace(ViewBag.TwitterImage) ? ViewBag.TwitterImage : UrlOptions.Value.Www + "/assets/slide.jpg")"/>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
