@@ -57,6 +57,10 @@ p {
     word-wrap: break-word;
 }
 
+.abp-toast-message {
+    color: #fff;
+}
+
 textarea {
     height: 90px!important;
 }

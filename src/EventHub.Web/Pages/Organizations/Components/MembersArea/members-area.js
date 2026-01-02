@@ -23,7 +23,6 @@
         function manipulateDOMForMoreDetail() {
             var hashCode = Number($wrapper.find('[data-hash-code]').attr('data-hash-code'))
             $('#MemberList-' + hashCode + '> div').addClass('col-6 col-md-4 col-lg-2');
-            $('#MemberList-' + hashCode + '> * > div > .member-name').removeAttr('style');
             $('#MemberList-' + hashCode + '> * > div').addClass('member-container text-center');
             $('#load-more-section-' + hashCode).addClass('text-center mt-3');
         }
