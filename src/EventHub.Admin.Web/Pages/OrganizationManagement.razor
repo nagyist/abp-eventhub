@@ -27,28 +27,28 @@
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["Name"]</FieldLabel>
-                        <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@Filter.Name"/>
+                        <TextInput TValue="string" KeyPress="OnKeyPress" @bind-Value="@Filter.Name"/>
                     </Field>
                 </Column>
 
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["DisplayName"]</FieldLabel>
-                        <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@Filter.DisplayName"/>
+                        <TextInput TValue="string" KeyPress="OnKeyPress" @bind-Value="@Filter.DisplayName"/>
                     </Field>
                 </Column>
 
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["MinMemberCount"]</FieldLabel>
-                        <NumericEdit TValue="int?" KeyPress="OnKeyPress" @bind-Value="@Filter.MinMemberCount"/>
+                        <NumericInput TValue="int?" KeyPress="OnKeyPress" @bind-Value="@Filter.MinMemberCount"/>
                     </Field>
                 </Column>
 
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["MaxMemberCount"]</FieldLabel>
-                        <NumericEdit TValue="int?" KeyPress="OnKeyPress" @bind-Value="@Filter.MaxMemberCount"/>
+                        <NumericInput TValue="int?" KeyPress="OnKeyPress" @bind-Value="@Filter.MaxMemberCount"/>
                     </Field>
                 </Column>
             </div>
@@ -67,17 +67,17 @@
                         <EntityActions TItem="OrganizationInListDto">
                             <EntityAction TItem="OrganizationInListDto"
                                           RequiredPolicy="@EventHubPermissions.Organizations.Memberships.Default"
-                                          Clicked="@(() => NavigationManager.NavigateTo($"/organization-memberships/{context.Id}"))"
+                                          Clicked="@(() => NavigationManager.NavigateTo($"/organization-memberships/{context.Item.Id}"))"
                                           Text="@L["Members"]">
                             </EntityAction>
                             <EntityAction TItem="OrganizationInListDto"
                                           RequiredPolicy="@EventHubPermissions.Organizations.Update"
-                                          Clicked="() => OpenEditOrganizationModalAsync(context)"
+                                          Clicked="() => OpenEditOrganizationModalAsync(context.Item)"
                                           Text="@L["Edit"]">
                             </EntityAction>
                             <EntityAction TItem="OrganizationInListDto"
                                           RequiredPolicy="@EventHubPermissions.Organizations.Delete"
-                                          Clicked="() => DeleteOrganizationAsync(context)"
+                                          Clicked="() => DeleteOrganizationAsync(context.Item)"
                                           ConfirmationMessage="@(() => L["DeleteConfirmationMessage"])"
                                           Text="@L["Delete"]">
                             </EntityAction>
@@ -125,66 +125,66 @@
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["DisplayName"] *</FieldLabel>
-                                        <TextEdit TValue="string" @bind-Text="@EditingOrganization.DisplayName">
+                                        <TextInput TValue="string" @bind-Value="@EditingOrganization.DisplayName">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </TextEdit>
+                                        </TextInput>
                                     </Field>
                                 </Validation>
 
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["Description"] *</FieldLabel>
-                                        <MemoEdit Rows="4" TValue="string" @bind-Text="@EditingOrganization.Description">
+                                        <MemoInput Rows="4" TValue="string" @bind-Value="@EditingOrganization.Description">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </MemoEdit>
+                                        </MemoInput>
                                     </Field>
                                 </Validation>
 
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["Website"]</FieldLabel>
-                                        <TextEdit TValue="string" @bind-Text="@EditingOrganization.Website">
+                                        <TextInput TValue="string" @bind-Value="@EditingOrganization.Website">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </TextEdit>
+                                        </TextInput>
                                     </Field>
                                 </Validation>
 
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["TwitterUsername"]</FieldLabel>
-                                        <TextEdit TValue="string" @bind-Text="@EditingOrganization.TwitterUsername">
+                                        <TextInput TValue="string" @bind-Value="@EditingOrganization.TwitterUsername">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </TextEdit>
+                                        </TextInput>
                                     </Field>
                                 </Validation>
 
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["GitHubUsername"]</FieldLabel>
-                                        <TextEdit TValue="string" @bind-Text="@EditingOrganization.GitHubUsername">
+                                        <TextInput TValue="string" @bind-Value="@EditingOrganization.GitHubUsername">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </TextEdit>
+                                        </TextInput>
                                     </Field>
                                 </Validation>
 
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["FacebookUsername"]</FieldLabel>
-                                        <TextEdit TValue="string" @bind-Text="@EditingOrganization.FacebookUsername">
+                                        <TextInput TValue="string" @bind-Value="@EditingOrganization.FacebookUsername">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </TextEdit>
+                                        </TextInput>
                                     </Field>
                                 </Validation>
 
@@ -192,22 +192,22 @@
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["InstagramUsername"]</FieldLabel>
-                                        <TextEdit TValue="string" @bind-Text="@EditingOrganization.InstagramUsername">
+                                        <TextInput TValue="string" @bind-Value="@EditingOrganization.InstagramUsername">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </TextEdit>
+                                        </TextInput>
                                     </Field>
                                 </Validation>
 
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["MediumUsername"]</FieldLabel>
-                                        <TextEdit TValue="string" @bind-Text="@EditingOrganization.MediumUsername">
+                                        <TextInput TValue="string" @bind-Value="@EditingOrganization.MediumUsername">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </TextEdit>
+                                        </TextInput>
                                     </Field>
                                 </Validation>
 
@@ -236,7 +236,7 @@
                                 <Field Horizontal="true">
                                     <FieldLabel ColumnSize="ColumnSize.Is3">@L["ChooseProfileImage"]</FieldLabel>
                                     <FieldBody ColumnSize="ColumnSize.Is6">
-                                        <FileEdit MaxMessageSize="@OrganizationConsts.MaxProfilePictureFileSize" Filter="@string.Join(", ", OrganizationConsts.AllowedProfilePictureExtensions)" Changed="@OnProfileImageFileChanged" Progressed="@OnProgressedForProfileImage" AutoReset="true"/>
+                                        <FileInput MaxMessageSize="@OrganizationConsts.MaxProfilePictureFileSize" Filter="@string.Join(", ", OrganizationConsts.AllowedProfilePictureExtensions)" Changed="@OnProfileImageFileChanged" Progressed="@OnProgressedForProfileImage" AutoReset="true"/>
                                     </FieldBody>
                                     <Column ColumnSize="ColumnSize.Is3">
                                         @if (DisabledProfileImageButton)

@@ -1,4 +1,4 @@
-﻿@using EventHub.Admin.Users
+@using EventHub.Admin.Users
 @inherits EventHubComponentBase
 @inject IUserAppService UserAppService
 
@@ -13,7 +13,7 @@
                 <Column ColumnSize="ColumnSize.Is12">
                     <Field>
                         <FieldLabel>@L["UserName"]</FieldLabel>
-                        <TextEdit TValue="string" KeyPress="OnKeyPressed" @bind-Text="@Filter.Username" />
+                        <TextInput TValue="string" KeyPress="OnKeyPressed" @bind-Value="@Filter.Username" />
                     </Field>
                 </Column>
             </div>
@@ -30,34 +30,34 @@
                             <Check TValue="bool" @bind-Checked="@AllUserSelected"></Check>
                         </CaptionTemplate>
                         <DisplayTemplate>
-                            @if (SelectAllUsers.ContainsKey(context.Id))
+                            @if (SelectAllUsers.ContainsKey(context.Item.Id))
                             {
-                                <Check TValue="bool" @bind-Checked="@SelectAllUsers[context.Id]"></Check>
+                                <Check TValue="bool" @bind-Checked="@SelectAllUsers[context.Item.Id]"></Check>
                             }
                         </DisplayTemplate>
                     </DataGridColumn>
 
                     <DataGridColumn TItem="UserDto" Field="@nameof(UserDto.Username)" Caption="@L["UserName"].Value">
                         <DisplayTemplate>
-                            @(context.Username)
+                            @(context.Item.Username)
                         </DisplayTemplate>
                     </DataGridColumn>
 
                     <DataGridColumn TItem="UserDto" Field="@nameof(UserDto.Name)" Caption="@L["Name"].Value">
                         <DisplayTemplate>
-                            @(context.Name)
+                            @(context.Item.Name)
                         </DisplayTemplate>
                     </DataGridColumn>
 
                     <DataGridColumn TItem="UserDto" Field="@nameof(UserDto.Surname)" Caption="@L["Surname"].Value">
                         <DisplayTemplate>
-                            @(context.Surname)
+                            @(context.Item.Surname)
                         </DisplayTemplate>
                     </DataGridColumn>
 
                     <DataGridColumn TItem="UserDto" Field="@nameof(UserDto.Email)" Caption="@L["Email"].Value">
                         <DisplayTemplate>
-                            @(context.Email)
+                            @(context.Item.Email)
                         </DisplayTemplate>
                     </DataGridColumn>
                 </DataGridColumns>

@@ -25,14 +25,14 @@
                 <Column ColumnSize="ColumnSize.Is6">
                     <Field>
                         <FieldLabel>@L["OrganizationName"]</FieldLabel>
-                        <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@OrganizationName"/>
+                        <TextInput TValue="string" KeyPress="OnKeyPress" @bind-Value="@OrganizationName"/>
                     </Field>
                 </Column>
 
                 <Column ColumnSize="ColumnSize.Is6">
                     <Field>
                         <FieldLabel>@L["UserName"]</FieldLabel>
-                        <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@Filter.UserName"/>
+                        <TextInput TValue="string" KeyPress="OnKeyPress" @bind-Value="@Filter.UserName"/>
                     </Field>
                 </Column>
             </Row>
