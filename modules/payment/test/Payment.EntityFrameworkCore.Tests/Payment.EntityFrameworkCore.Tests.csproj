@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="9.0.5" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="10.0.9" />
     <ProjectReference Include="..\..\src\Payment.EntityFrameworkCore\Payment.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Payment.TestBase\Payment.TestBase.csproj" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="10.4.1" />

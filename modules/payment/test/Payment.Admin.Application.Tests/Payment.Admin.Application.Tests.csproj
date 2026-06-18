@@ -10,6 +10,6 @@
     <ItemGroup>
         <ProjectReference Include="..\..\src\Payment.Admin.Application\Payment.Admin.Application.csproj" />
         <ProjectReference Include="..\Payment.Domain.Tests\Payment.Domain.Tests.csproj" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.6.0" />
     </ItemGroup>
 </Project>
