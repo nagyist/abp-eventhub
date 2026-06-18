@@ -2,7 +2,7 @@
 
 [![.NET](https://github.com/volosoft/eventhub/actions/workflows/dotnet.yml/badge.svg)](https://github.com/volosoft/eventhub/actions/workflows/dotnet.yml)
 
-This is a reference application built with the ABP Framework. It implements the Domain Driven Design with multiple application layers.
+This is a reference application built with the ABP Framework v10.4.1. It implements the Domain Driven Design with multiple application layers.
 
 ## The book
 
@@ -16,7 +16,7 @@ This solution is originally prepared to be a real-world example for the **Master
 
 ## Requirements
 
-* .NET 8.0+
+* .NET 10.0
 * Docker
 
 ## How to run
