@@ -28,7 +28,7 @@ This solution is originally prepared to be a real-world example for the **Master
 * Run `EventHub.HttpApi.Host`
 * Run `EventHub.Web`
 * Run `EventHub.Admin.HttpApi.Host`
-* Run `EventHub.Web.Admin`
+* Run `EventHub.Admin.Web`
 
 `admin` user's password is `1q2w3E*`
 
