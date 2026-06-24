@@ -2,7 +2,7 @@
 
 [![.NET](https://github.com/volosoft/eventhub/actions/workflows/dotnet.yml/badge.svg)](https://github.com/volosoft/eventhub/actions/workflows/dotnet.yml)
 
-This is a reference application built with the ABP Framework. It implements the Domain Driven Design with multiple application layers.
+This is a reference application built with the ABP Framework v10.4.1. It implements Domain Driven Design with multiple application layers, separate public/admin hosts, an IdentityServer host, PostgreSQL-backed EF Core migrations, background services, and a custom payment module.
 
 ## The book
 
@@ -16,21 +16,78 @@ This solution is originally prepared to be a real-world example for the **Master
 
 ## Requirements
 
-* .NET 8.0+
+* .NET 10.0
 * Docker
+* [ABP CLI](https://abp.io/docs/latest/cli) for client-side library restoration
+* [ABP Studio](https://abp.io/docs/latest/studio) if you want to use the Solution Runner and initial tasks
 
 ## How to run
 
-* Execute `dotnet build /graphBuild` command in the root folder of the solution.
-* Execute `etc/docker/up.ps1` to run the depending services.
-* Run `EventHub.DbMigrator` to create the database and seed initial data.
-* Run `EventHub.IdentityServer`
-* Run `EventHub.HttpApi.Host`
-* Run `EventHub.Web`
-* Run `EventHub.Admin.HttpApi.Host`
-* Run `EventHub.Web.Admin`
+### Initial tasks in ABP Studio
+
+Open `EventHub.abpsln` in ABP Studio and use the **Default** run profile. The profile defines these tasks in `etc/abp-studio/run-profiles/Default.abprun.json`:
+
+* **Initialize Solution**: Runs once per computer when the solution is initialized. It starts PostgreSQL/Redis containers, runs `abp install-libs`, and executes the DbMigrator.
+* **Start Infrastructure**: Starts the PostgreSQL and Redis containers.
+* **Install Client-Side Libraries**: Runs `abp install-libs`.
+* **Migrate Database**: Runs `EventHub.DbMigrator` to apply EF Core migrations and seed initial data.
+
+After the initial task completes, start the applications from ABP Studio's Solution Runner:
+
+* `EventHub.IdentityServer`
+* `EventHub.HttpApi.Host`
+* `EventHub.Web`
+* `EventHub.Admin.HttpApi.Host`
+* `EventHub.Admin.Web`
+
+### Manual startup
+
+From the solution root, you can run the same setup script used by ABP Studio:
+
+```powershell
+./scripts/initialize-solution.ps1
+```
+
+Or run the steps manually:
+
+```powershell
+./etc/docker/up.ps1
+abp install-libs
+dotnet run --project src/EventHub.DbMigrator/EventHub.DbMigrator.csproj
+dotnet build /graphBuild
+```
+
+Then run the application projects in this order:
+
+```powershell
+dotnet run --project src/EventHub.IdentityServer/EventHub.IdentityServer.csproj
+dotnet run --project src/EventHub.HttpApi.Host/EventHub.HttpApi.Host.csproj
+dotnet run --project src/EventHub.Web/EventHub.Web.csproj
+dotnet run --project src/EventHub.Admin.HttpApi.Host/EventHub.Admin.HttpApi.Host.csproj
+dotnet run --project src/EventHub.Admin.Web/EventHub.Admin.Web.csproj
+```
 
 `admin` user's password is `1q2w3E*`
+
+## Solution structure
+
+* `src/EventHub.IdentityServer`: Authentication host.
+* `src/EventHub.HttpApi.Host`: Public HTTP API host.
+* `src/EventHub.Web`: Public MVC/Razor Pages web application.
+* `src/EventHub.Admin.HttpApi.Host`: Admin HTTP API host.
+* `src/EventHub.Admin.Web`: Admin Blazor WebAssembly application.
+* `src/EventHub.DbMigrator`: Console application that applies EF Core migrations and seeds data.
+* `src/EventHub.BackgroundServices`: Background worker host.
+* `modules/payment`: Custom payment module used by EventHub.
+
+## ABP documentation
+
+* [ABP Studio Solution Runner](https://abp.io/docs/latest/studio/running-applications)
+* [ABP CLI install-libs](https://abp.io/docs/latest/cli#install-libs)
+* [Layered Solution DbMigrator](https://abp.io/docs/latest/solution-templates/layered-web-application/db-migrator)
+* [MVC / Razor Pages UI](https://abp.io/docs/latest/framework/ui/mvc-razor-pages)
+* [Blazor UI](https://abp.io/docs/latest/framework/ui/blazor)
+* [Entity Framework Core integration](https://abp.io/docs/latest/framework/data/entity-framework-core)
 
 ## See live
 

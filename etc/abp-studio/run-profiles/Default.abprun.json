@@ -57,5 +57,31 @@
       "../../docker/infrastructure/postgres.yml": {}
     },
     "serviceName": "eventhub"
+  },
+  "tasks": {
+    "Initialize Solution": {
+      "behaviour": 2,
+      "startCommand": "./initialize-solution.ps1",
+      "workingDirectory": "../../scripts",
+      "shortDescription": "Starts infrastructure, installs client-side libraries, and migrates the database."
+    },
+    "Start Infrastructure": {
+      "behaviour": 0,
+      "startCommand": "./start-infrastructure.ps1",
+      "workingDirectory": "../../scripts",
+      "shortDescription": "Starts PostgreSQL and Redis containers required by EventHub."
+    },
+    "Install Client-Side Libraries": {
+      "behaviour": 0,
+      "startCommand": "./install-libs.ps1",
+      "workingDirectory": "../../scripts",
+      "shortDescription": "Runs abp install-libs to restore client-side libraries."
+    },
+    "Migrate Database": {
+      "behaviour": 0,
+      "startCommand": "./migrate-database.ps1",
+      "workingDirectory": "../../scripts",
+      "shortDescription": "Runs EventHub.DbMigrator to apply migrations and seed data."
+    }
   }
 }

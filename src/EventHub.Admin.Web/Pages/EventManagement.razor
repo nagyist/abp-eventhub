@@ -1,4 +1,4 @@
-﻿@page "/events"
+@page "/events"
 @using EventHub.Admin.Events
 @using EventHub.Admin.Permissions
 @using EventHub.Events
@@ -22,37 +22,37 @@
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["Title"]</FieldLabel>
-                        <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@Filter.Title"/>
+                        <TextInput TValue="string" KeyPress="OnKeyPress" @bind-Value="@Filter.Title"/>
                     </Field>
                 </Column>
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["OrganizationDisplayName"]</FieldLabel>
-                        <TextEdit TValue="string" KeyPress="OnKeyPress" @bind-Text="@Filter.OrganizationDisplayName"/>
+                        <TextInput TValue="string" KeyPress="OnKeyPress" @bind-Value="@Filter.OrganizationDisplayName"/>
                     </Field>
                 </Column>
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["MinStartTime"]</FieldLabel>
-                        <DateEdit TValue="DateTime?" Date="@Filter.MinStartTime" DateChanged="OnSelectedDateChangedForMinStartTime" />
+                        <DatePicker TValue="DateTime?" Value="@Filter.MinStartTime" ValueChanged="OnSelectedDateChangedForMinStartTime" />
                     </Field>
                 </Column>
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["MaxStartTime"]</FieldLabel>
-                        <DateEdit TValue="DateTime?" Date="@Filter.MaxStartTime" DateChanged="OnSelectedDateChangedForMaxStartTime" />
+                        <DatePicker TValue="DateTime?" Value="@Filter.MaxStartTime" ValueChanged="OnSelectedDateChangedForMaxStartTime" />
                     </Field>
                 </Column>
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["MinAttendeeCount"]</FieldLabel>
-                        <NumericEdit TValue="int?" KeyPress="OnKeyPress" @bind-Value="@Filter.MinAttendeeCount"/>
+                        <NumericInput TValue="int?" KeyPress="OnKeyPress" @bind-Value="@Filter.MinAttendeeCount"/>
                     </Field>
                 </Column>
                 <Column ColumnSize="ColumnSize.Is3">
                     <Field>
                         <FieldLabel>@L["MaxAttendeeCount"]</FieldLabel>
-                        <NumericEdit TValue="int?" KeyPress="OnKeyPress" @bind-Value="@Filter.MaxAttendeeCount"/>
+                        <NumericInput TValue="int?" KeyPress="OnKeyPress" @bind-Value="@Filter.MaxAttendeeCount"/>
                     </Field>
                 </Column>
             </div>
@@ -70,12 +70,12 @@
                         <EntityActions TItem="EventInListDto">
                             <EntityAction TItem="EventInListDto"
                                           RequiredPolicy="@EventHubPermissions.Events.Update"
-                                          Clicked="() => OpenEditEventModalAsync(context)"
+                                          Clicked="() => OpenEditEventModalAsync(context.Item)"
                                           Text="@L["Edit"]">
                             </EntityAction>
                             <EntityAction TItem="EventInListDto"
                                           RequiredPolicy="@EventHubPermissions.Events.Registrations.Default"
-                                          Clicked="@(() => NavigationManager.NavigateTo($"/event/{context.Id}/attendees"))"
+                                          Clicked="@(() => NavigationManager.NavigateTo($"/event/{context.Item.Id}/attendees"))"
                                           Text="@L["Attendees"]">
                             </EntityAction>
                         </EntityActions>
@@ -126,31 +126,31 @@
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["Title"] *</FieldLabel>
-                                        <TextEdit TValue="string" @bind-Text="@EditingEvent.Title">
+                                        <TextInput TValue="string" @bind-Value="@EditingEvent.Title">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </TextEdit>
+                                        </TextInput>
                                     </Field>
                                 </Validation>
 
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["Description"] *</FieldLabel>
-                                        <MemoEdit @bind-Text="@EditingEvent.Description">
+                                        <MemoInput @bind-Value="@EditingEvent.Description">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </MemoEdit>
+                                        </MemoInput>
                                     </Field>
                                 </Validation>
                                 
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["IsOnline"]</FieldLabel>
-                                        <Select @bind-SelectedValue="@EditingEvent.IsOnline">
-                                            <SelectItem Value="@Boolean.TrueString">@L["Online"]</SelectItem>
-                                            <SelectItem Value="@Boolean.FalseString">@L["InPerson"]</SelectItem>
+                                        <Select TValue="bool" @bind-SelectedValue="@EditingEvent.IsOnline">
+                                            <SelectItem Value="true">@L["Online"]</SelectItem>
+                                            <SelectItem Value="false">@L["InPerson"]</SelectItem>
                                         </Select>
                                     </Field>
                                 </Validation>
@@ -158,7 +158,7 @@
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["Language"]</FieldLabel>
-                                        <Select @bind-SelectedValue="@EditingEvent.Language">
+                                        <Select TValue="string" @bind-SelectedValue="@EditingEvent.Language">
                                             @if (Languages != null && Languages.Any())
                                             {
                                                 foreach (var language in Languages)
@@ -175,11 +175,11 @@
                                     <Validation>
                                         <Field>
                                             <FieldLabel>@L["OnlineLink"] *</FieldLabel>
-                                            <MemoEdit @bind-Text="@EditingEvent.OnlineLink">
+                                            <MemoInput @bind-Value="@EditingEvent.OnlineLink">
                                                 <Feedback>
                                                     <ValidationError/>
                                                 </Feedback>
-                                            </MemoEdit>
+                                            </MemoInput>
                                         </Field>
                                     </Validation>
                                 }
@@ -188,7 +188,7 @@
                                     <Validation>
                                         <Field>
                                             <FieldLabel>@L["Country"] *</FieldLabel>
-                                            <Select @bind-SelectedValue="@EditingEvent.CountryId">
+                                            <Select TValue="Guid?" @bind-SelectedValue="@EditingEvent.CountryId">
                                                 @if (Countries != null && Countries.Any())
                                                 {
                                                     @foreach (var country in Countries)
@@ -203,11 +203,11 @@
                                     <Validation>
                                         <Field>
                                             <FieldLabel>@L["City"] *</FieldLabel>
-                                            <TextEdit TValue="string" @bind-Text="@EditingEvent.City">
+                                            <TextInput TValue="string" @bind-Value="@EditingEvent.City">
                                                 <Feedback>
                                                     <ValidationError/>
                                                 </Feedback>
-                                            </TextEdit>
+                                            </TextInput>
                                         </Field>
                                     </Validation>
                                 }
@@ -215,11 +215,11 @@
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["Capacity"]</FieldLabel>
-                                        <NumericEdit TValue="int?" @bind-Value="@EditingEvent.Capacity">
+                                        <NumericInput TValue="int?" @bind-Value="@EditingEvent.Capacity">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </NumericEdit>
+                                        </NumericInput>
                                     </Field>
                                 </Validation>
 
@@ -230,21 +230,21 @@
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["StartTime"] *</FieldLabel>
-                                        <DateEdit TValue="DateTime"  InputMode="DateInputMode.DateTime" @bind-Date="@EditingEvent.StartTime">
+                                        <DatePicker TValue="DateTime"  InputMode="DateInputMode.DateTime" @bind-Value="@EditingEvent.StartTime">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </DateEdit>
+                                        </DatePicker>
                                     </Field>
                                 </Validation>
                                 <Validation>
                                     <Field>
                                         <FieldLabel>@L["EndTime"] *</FieldLabel>
-                                        <DateEdit TValue="DateTime"  InputMode="DateInputMode.DateTime" @bind-Date="@EditingEvent.EndTime">
+                                        <DatePicker TValue="DateTime"  InputMode="DateInputMode.DateTime" @bind-Value="@EditingEvent.EndTime">
                                             <Feedback>
                                                 <ValidationError/>
                                             </Feedback>
-                                        </DateEdit>
+                                        </DatePicker>
                                     </Field>
                                 </Validation>
                             </Validations>
@@ -261,7 +261,7 @@
                                 <Field Horizontal="true">
                                     <FieldLabel ColumnSize="ColumnSize.Is3">@L["ChooseCoverImage"]</FieldLabel>
                                     <FieldBody ColumnSize="ColumnSize.Is6">
-                                        <FileEdit MaxMessageSize="@EventConsts.MaxCoverImageFileSize" Filter="@string.Join(", ", EventConsts.AllowedCoverImageExtensions)" Changed="@OnCoverImageFileChanged" AutoReset="true"/>
+                                        <FileInput MaxMessageSize="@EventConsts.MaxCoverImageFileSize" Filter="@string.Join(", ", EventConsts.AllowedCoverImageExtensions)" Changed="@OnCoverImageFileChanged" AutoReset="true"/>
                                     </FieldBody>
                                     <Column ColumnSize="ColumnSize.Is3">
                                         @if (DisabledCoverImageButton)

@@ -35,7 +35,7 @@
                         <EntityActions TItem="EventAttendeeDto">
                             <EntityAction TItem="EventAttendeeDto"
                                           RequiredPolicy="@EventHubPermissions.Events.Registrations.RemoveAttendee"
-                                          Clicked="() => RemoveAttendeeAsync(context)"
+                                          Clicked="() => RemoveAttendeeAsync(context.Item)"
                                           ConfirmationMessage="@(() => L["AttendeeRemoveConfirmationMessage"])"
                                           Text="@L["RemoveUser"]">
                             </EntityAction>

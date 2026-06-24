@@ -17,7 +17,7 @@
             <div id="FilterSection" class="row mt-3">
                 <Field ColumnSize="ColumnSize.Is3">
                     <FieldLabel>@L["ProductName"]</FieldLabel>
-                    <TextEdit Placeholder="@L["ProductName"]" @bind-Text="@GetListInput.ProductName"/>
+                    <TextInput Placeholder="@L["ProductName"]" @bind-Value="@GetListInput.ProductName"/>
                 </Field>
                 <Field ColumnSize="ColumnSize.Is3">
                     <FieldLabel>@L["Status"]</FieldLabel>
@@ -31,11 +31,11 @@
                 </Field>
                 <Field ColumnSize="ColumnSize.Is3">
                     <FieldLabel>@L["MinCreationTime"]</FieldLabel>
-                    <DateEdit Placeholder="@L["MinCreationTime"]" @bind-Date="@GetListInput.MinCreationTime"/>
+                    <DatePicker TValue="DateTime?" Placeholder="@L["MinCreationTime"]" @bind-Value="@GetListInput.MinCreationTime"/>
                 </Field>
                 <Field ColumnSize="ColumnSize.Is3">
                     <FieldLabel>@L["MaxCreationTime"]</FieldLabel>
-                    <DateEdit Placeholder="@L["MaxCreationTime"]" @bind-Date="@GetListInput.MaxCreationTime"/>
+                    <DatePicker TValue="DateTime?" Placeholder="@L["MaxCreationTime"]" @bind-Value="@GetListInput.MaxCreationTime"/>
                 </Field>
                 <Field ColumnSize="ColumnSize.Is12">
                     <Row>

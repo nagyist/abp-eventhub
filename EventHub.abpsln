@@ -23,8 +23,8 @@
     }
   },
   "versions": {
-    "AbpFramework": "9.3.5",
-    "AbpCommercial": "9.3.5",
+    "AbpFramework": "10.4.1",
+    "AbpCommercial": "10.4.1",
     "AbpStudio": "1.2.2"
   }
 }

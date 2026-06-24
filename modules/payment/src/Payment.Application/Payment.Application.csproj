@@ -1,17 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
   <Import Project="..\..\configureawait.props" />
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <RootNamespace>Payment</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Volo.Abp.AutoMapper" Version="9.3.5" />
-    <PackageReference Include="Volo.Abp.Ddd.Application" Version="9.3.5" />
+    <PackageReference Include="Volo.Abp.AutoMapper" Version="10.4.1" />
+    <PackageReference Include="Volo.Abp.Ddd.Application" Version="10.4.1" />
     <ProjectReference Include="..\Payment.Application.Contracts\Payment.Application.Contracts.csproj" />
     <ProjectReference Include="..\Payment.Domain\Payment.Domain.csproj" />
     <PackageReference Update="Fody" Version="6.8.2">
