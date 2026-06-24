@@ -8,6 +8,7 @@ using EventHub.Web.Theme.Bundling;
 using EventHub.Web.Utils;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +18,7 @@ using Microsoft.IdentityModel.Protocols.OpenIdConnect;
 using Microsoft.OpenApi;
 using Payment.Web;
 using StackExchange.Redis;
+using System.Collections.Generic;
 using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.AspNetCore.Authentication.OpenIdConnect;
@@ -252,7 +254,17 @@ namespace EventHub.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseAbpRequestLocalization();
+            app.UseAbpRequestLocalization(options =>
+            {
+                options.DefaultRequestCulture = new RequestCulture("en");
+                options.SupportedCultures = new[] { new System.Globalization.CultureInfo("en") };
+                options.SupportedUICultures = options.SupportedCultures;
+                options.RequestCultureProviders = new List<IRequestCultureProvider>
+                {
+                    new QueryStringRequestCultureProvider(),
+                    new CookieRequestCultureProvider()
+                };
+            });
 
             if (!env.IsDevelopment())
             {
