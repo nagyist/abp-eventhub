@@ -19,6 +19,7 @@ using Microsoft.OpenApi;
 using Payment.Web;
 using StackExchange.Redis;
 using System.Collections.Generic;
+using System.Globalization;
 using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.AspNetCore.Authentication.OpenIdConnect;
@@ -253,6 +254,14 @@ namespace EventHub.Web
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.Use(async (context, next) =>
+            {
+                var culture = new CultureInfo("en");
+                CultureInfo.CurrentCulture = culture;
+                CultureInfo.CurrentUICulture = culture;
+                await next();
+            });
 
             app.UseAbpRequestLocalization(options =>
             {
